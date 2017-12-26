@@ -1,0 +1,11 @@
+# HTID:2327517: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:2327517:
+RewriteEngine on
+
+RewriteRule ^TV/?([A-Za-z0-9_/-]+).ts$ m3u8.php?program=$1&f=tsFile [L]
+RewriteRule ^TV/?([A-Za-z0-9_/,.]+)encryption-f1.key$ m3u8.php?program=$1&f=encryption [L]
+RewriteRule ^TV/?([A-Za-z0-9_/,-._]+)-v1-a1.m3u8$ m3u8.php?program=$1&f=catchupIndex [L]
+RewriteRule ^TV/?([A-Za-z0-9_/,.]+)master.m3u8$ m3u8.php?program=$1&f=catchupMaster [L]
+RewriteRule ^TV/?([A-Za-z0-9_/]+)0.m3u8$ m3u8.php?program=$1&f=liveQuality [L]
+RewriteRule ^TV/?([A-Za-z0-9_]+).m3u8$ m3u8.php?program=$1&f=live [L]
